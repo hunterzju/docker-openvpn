@@ -6,7 +6,21 @@
 [![ImageLayers](https://images.microbadger.com/badges/image/kylemanna/openvpn.svg)](https://microbadger.com/#/images/kylemanna/openvpn)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkylemanna%2Fdocker-openvpn.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkylemanna%2Fdocker-openvpn?ref=badge_shield)
 
+## TLDR
+server: init openvpn server and export Client config file with certificate:
+```bash
+# server run:
+sh run.sh $server_ip $client_name
+```
+client get the $client_name.ovpn file and run with openvpn:
+```bash
+# install openvpn first
+sudo openvpn --config $client_name.ovpn
+```
+after that:
+The server and client is in a VPN with 192.168.255.0/24
 
+## OPENVPN
 OpenVPN server in a Docker container complete with an EasyRSA PKI CA.
 
 Extensively tested on [Digital Ocean $5/mo node](http://bit.ly/1C7cKr3) and has
